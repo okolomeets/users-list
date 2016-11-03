@@ -4,7 +4,8 @@ import './operators';
 
 @Component({
     selector: 'user-app',
-    template: `<user-list></user-list>`
+    template: `<user-list></user-list>
+`
 })
 
 export class AppMain {
