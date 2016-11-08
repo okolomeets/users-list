@@ -1,23 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
-import { UserService } from './users.service';
+import { User } from '../data/user';
+import { UserService } from '../data/users.service';
 
 
 @Component({
     selector: 'user-list',
-    templateUrl: './template/users-list.html',
+    templateUrl: './users-list.html',
     moduleId: module.id,
-    providers: [ UserService ],
-    styles: ['.error {color:red;}']
-
-
+    providers: [ UserService ]
 })
 
 export class UserList implements OnInit{
     errorMessage: string;
     users: User[];
-    usersFilter: User[];
-    
+    usersFilter: User[];    
 
     constructor (private usersService: UserService) {}
 
