@@ -1,0 +1,14 @@
+
+
+footer {
+  color: red;
+}
+nav {
+  li a {
+    font-size: 25px;
+    color: blue;
+    &:hover {
+       color: #00cc99;
+    }
+  }
+}

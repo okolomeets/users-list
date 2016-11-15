@@ -8,6 +8,8 @@ import { AppMain }                  from "./home/app-main.component";
 import { UserList }                 from  './user-list-page/users-list.component';
 import { AppRoutingModule }         from './app-routing';
 import { TestApp }                  from './test/test';
+import { ApiTest }                  from './api-test/api-test.component';
+import { UserDetail }               from './user-detail/user-detail.component';
 
 @NgModule({
     imports: [
@@ -20,7 +22,9 @@ import { TestApp }                  from './test/test';
     declarations: [
         AppMain,
         UserList,
-        TestApp
+        TestApp,
+        ApiTest,
+        UserDetail
 
     ],
 

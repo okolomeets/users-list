@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../data/user';
+import { Router }            from '@angular/router';
 import { UserService } from '../data/users.service';
+
 
 
 @Component({
@@ -13,7 +15,7 @@ import { UserService } from '../data/users.service';
 export class UserList implements OnInit{
     errorMessage: string;
     users: User[];
-    usersFilter: User[];    
+    usersFilter: User[];
 
     constructor (private usersService: UserService) {}
 

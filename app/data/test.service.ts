@@ -1,28 +1,24 @@
 import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Observable } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
-import 'rxjs/add/operator/toPromise';
+import { User }           from './posts';
 
-import { User }           from './user';
 
 
 @Injectable()
-export class UserService  {
-    private userUrl = 'app/users.json';
+export class TestService  {
 
-    constructor(private http: Http){ }
+    constructor(
+        private http:Http
+    ) { }
 
-    getUsers(): Observable<User[]> {
-        return this.http.get(this.userUrl)
-            .map(this.extractData)
+    private baseUrl = 'http://api.wunderground.com/api/2ad187c33b4b525a/forecast/q/zmw:94125.1.99999.json';
+
+    getPosts(): Observable<Posts[]> {
+        return this.http.get(this.baseUrl)
+            .map((res:Response) => res.json())
             .catch(this.handleError);
     }
-
-    private extractData(res: Response) {
-        let body = res.json();
-        return body.data || { };
-    }
-
     private handleError (error: Response | any) {
         let errMsg: string;
         if (error instanceof Response) {
@@ -35,4 +31,5 @@ export class UserService  {
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
+
 }
